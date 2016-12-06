@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.Scanner;
 
 
-public class Article{
+public class Article {
 	
 	public String line;
 	public String path;
@@ -17,14 +17,18 @@ public class Article{
 		{
 			line = in.nextLine();					
 			
-			while(!line.equals("Art. 243."))
+			while(!line.equals("dnia jej og³oszenia."))
 			{		
 				if(line.equals("Art. " + x + "."))
 				{
 					while(!line.equals("Art. " + (y+1) + "."))
 					{
-						if(unnecessaryelemetnt())
-							System.out.println(line);
+						if(artunnecessaryelemetnt())
+						{
+							if(!line.endsWith("-")) { System.out.println(line); }
+							else join(in);
+						}
+							
 						line = in.nextLine();
 					}	
 				}
@@ -34,23 +38,26 @@ public class Article{
 	}
 	
 	
-	public boolean unnecessaryelemetnt()
+	public boolean artunnecessaryelemetnt()
 	{
 		if(line.equals("©Kancelaria Sejmu") || line.equals("2009-11-16"))		
+			return false;	
+		if(line.equals(line.toUpperCase()))
+			return false;	
+		if(line.startsWith("Rozdzia³"))
 			return false;
-		
-		
-		
-		
-		
-		return true;
-		
-		
+		return true;		
 	}
 	
-	public void join()
-	{
-		//laczenie wyrazow w calosc
+	public void join(Scanner in)
+	{			
+		line = line.substring(0, line.length() - 1) + in.nextLine();
+		if(line.endsWith("-"))
+		{
+			join(in);
+		}		
+		else
+		System.out.println(line);
 		
 	}
 	
