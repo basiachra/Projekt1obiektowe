@@ -12,7 +12,7 @@ public class Article  {
 	public int y;
 	
 	
-	public static void readarticle(int x, int y, String path) throws IOException
+	public static void readarticle(int x, int y, String path) 
 	{	
 		try (Scanner in = new Scanner(new File(path)))
 		{

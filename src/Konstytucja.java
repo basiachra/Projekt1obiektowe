@@ -33,15 +33,22 @@ public class Konstytucja {
 				chapterarg = czytaj.next();
 				ArgumentParser.chapter(chapterarg, path_file);
 			}
-			else System.out.println("Podaj poprawn¹ literkê");
+			else System.out.println("Jesteœ gupi ;-; ");
 		
 			czytaj.close();
 		
 		
-		}finally{
-			
-			
-			
 		}
+		
+		catch (IOException e)
+		{  			
+			System.out.println(e.getMessage());
+		}    
+		catch(IllegalArgumentException ex)
+        {
+        	System.out.println(ex.getMessage());
+        }
+			
+		
 	}	
 }

@@ -6,18 +6,14 @@ import java.util.Scanner;
 
 public class Chapter {
 	
-	public String line;
+	public static String line;
 	public String path;
 		
-	public Chapter(String file_path){
-		path = file_path;
-	}		
 		
-	public void readchapter(String x) throws IOException
+	public static void readchapter(String x, String y, String path) 
 	{			
 		try (Scanner in = new Scanner(new File(path)))
 		{
-			String y = "XI";
 			line = in.nextLine();					
 			while(in.hasNextLine())
 			{		
