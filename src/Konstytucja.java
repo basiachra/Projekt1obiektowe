@@ -33,7 +33,7 @@ public class Konstytucja {
 				chapterarg = czytaj.next();
 				ArgumentParser.chapter(chapterarg, path_file);
 			}
-			else System.out.println("Jesteœ gupi ;-; ");
+			else throw new IllegalArgumentException("Podano z³y atrybut");
 		
 			czytaj.close();
 		

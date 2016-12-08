@@ -1,15 +1,12 @@
 
 import java.io.*;
 import java.util.Scanner;
-//import Parser.class
 
-public class Article  {
-	
+
+public class Article  {	
 	
 	public static String line;
 	public String path;
-	public int x;
-	public int y;
 	
 	
 	public static void readarticle(int x, int y, String path) 
@@ -28,7 +25,8 @@ public class Article  {
 							if(!line.endsWith("-")) { System.out.println(line); }
 							else Parser.join(in, line);
 						}
-						line = in.nextLine();									
+						if(in.hasNextLine())
+							line = in.nextLine();									
 					}	
 				}
 				line = in.nextLine();

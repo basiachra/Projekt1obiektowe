@@ -1,5 +1,4 @@
 
-
 import java.io.*;
 import java.util.Scanner;
 
@@ -19,7 +18,7 @@ public class Chapter {
 			{		
 				if(line.equals("Rozdzia³ " + x))
 				{
-					while(!line.equals("Rozdzia³ " + y))
+					while(!line.equals("Rozdzia³ " + y) && in.hasNextLine())
 					{									
 						if(Parser.chapunnecessaryelemetnt(line))
 						{

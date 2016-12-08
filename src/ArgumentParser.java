@@ -5,7 +5,7 @@ public class ArgumentParser {
 	public static void article(int arg1, int arg2 , String path) throws IOException
 	{	
 		
-		if(arg1<1 || arg1>243 || arg2<arg1 || arg2>243 ) System.out.println("Niepoprawny zakres");
+		if(arg1<1 || arg1>243 || arg2<arg1 || arg2>243 ) throw new IllegalArgumentException(arg1 + " "+ arg2 + "Niepoprawny zakres artyku³ów");
 		else Article.readarticle(arg1, arg2, path);
 	
 	}	
@@ -65,10 +65,10 @@ public class ArgumentParser {
 				break;
 			case "13":
 			case "XIII" : 
-				Chapter.readchapter("XIII", " ", path);
+				Chapter.readchapter("XIII", "XIV ", path);
 				break;
 			default :
-				System.out.println("Nie ma takiego rozdzia³u");			
+				throw new IllegalArgumentException(argument + "Nie ma takiego rozdzia³u");		
 		}
 			
 	}		
