@@ -1,5 +1,5 @@
+package konstytucja;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Parser {
@@ -8,7 +8,7 @@ public class Parser {
 	public Scanner in;
 	
 
-	public static void join(Scanner in, String line) throws IOException
+	public static void join(Scanner in, String line)
 	{			
 		line = line.substring(0, line.length() - 1) + in.nextLine();
 		if(line.endsWith("-"))
@@ -20,7 +20,7 @@ public class Parser {
 		
 	}
 	
-	public static boolean chapunnecessaryelemetnt(String line) throws IOException
+	public static boolean chapunnecessaryelemetnt(String line) 
 	{
 		if(line.equals("©Kancelaria Sejmu") || line.equals("2009-11-16"))		
 			return false;			
@@ -28,7 +28,7 @@ public class Parser {
 	}
 	
 	
-	public static boolean artunnecessaryelemetnt(String line) throws IOException
+	public static boolean artunnecessaryelemetnt(String line)
 	{
 		if(line.equals("©Kancelaria Sejmu") || line.equals("2009-11-16"))		
 			return false;	
