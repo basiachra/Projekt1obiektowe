@@ -1,33 +1,47 @@
 
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Konstytucja {
 
 		
+
 	public static void main(String[] args) throws IOException
 	{
-		// System.out.println("Podaj œcie¿kê do pliku, 'a' lub 'r' w zale¿noœci co chcesz wyœwietliæ oraz przedzia³: ");
-		 
-		//ArgumentParser arguments = new ArgumentParser();
+		try{ 
+			System.out.println("Podaj œcie¿kê do pliku: ");
+			Scanner czytaj = new Scanner(System.in);
+			String path_file;
+			path_file=czytaj.nextLine();	
+			
+			System.out.println("W zale¿noœci co chcesz wyœwietliæ wpisz 'a' albo 'c': ");
+			String id;
+			id = czytaj.nextLine();	
+			
+			if(id.equals("a"))
+			{
+				System.out.println("Podaj przedzia³ artyku³ów:");
+				int from = czytaj.nextInt();
+				int to = czytaj.nextInt();				
+				ArgumentParser.article(from, to, path_file);
+			}
+			else if(id.equals("c"))
+			{
+				System.out.println("Podaj numer rozdzia³u:");
+				String  chapterarg;
+				chapterarg = czytaj.next();
+				ArgumentParser.chapter(chapterarg, path_file);
+			}
+			else System.out.println("Podaj poprawn¹ literkê");
+		
+			czytaj.close();
 		
 		
-		/* 
-		Chapter wyswietl_rozdzial = new Chapter("C:\\Users\\Basia\\Desktop\\konstytucja.txt.txt");
-		wyswietl_rozdzial.readchapter("X");
-		
-		 if (ArgumentParser.argumentsParse(args)){
-		
+		}finally{
+			
+			
+			
 		}
-		
-		else if (ArgumentParser.argumentsParse(args)){
-		
-		}
-		*
-		*
-		*/
-		Article wyswietl_artykul = new Article("C:\\Users\\Basia\\Desktop\\konstytucja.txt.txt");
-		wyswietl_artykul.readarticle(15,18);
-		
 	}	
 }

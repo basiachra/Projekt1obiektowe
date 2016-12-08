@@ -6,17 +6,13 @@ import java.util.Scanner;
 public class Article  {
 	
 	
-	public String line;
+	public static String line;
 	public String path;
 	public int x;
 	public int y;
 	
 	
-	public Article(String file_path) {		
-		path = file_path;		
-	}
-	
-	public void readarticle(int x, int y) throws IOException
+	public static void readarticle(int x, int y, String path) throws IOException
 	{	
 		try (Scanner in = new Scanner(new File(path)))
 		{
